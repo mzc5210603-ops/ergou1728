@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>格纸间 · Markdown 写字间</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="paper-head">
+  <div class="clip"></div>
+  <div class="title-blk">
+    <h1>格纸间</h1>
+    <p>MARKDOWN&nbsp;ROOM&nbsp;No.30&nbsp;&nbsp;·&nbsp;&nbsp;自研渲染器&nbsp;·&nbsp;本地写作&nbsp;·&nbsp;自动保存</p>
+  </div>
+  <div class="head-tools">
+    <button class="tool-btn" id="themeBtn" title="纸/夜切换">◐ 夜纸</button>
+    <button class="tool-btn" id="exportBtn">导出 HTML</button>
+    <button class="tool-btn" id="copyBtn">复制 HTML</button>
+  </div>
+</header>
+
+<div class="toolbar" id="toolbar">
+  <button data-md="# ">H1</button>
+  <button data-md="## ">H2</button>
+  <button data-md="### ">H3</button>
+  <span class="tb-sep"></span>
+  <button data-md="**" data-wrap="1"><b>B</b></button>
+  <button data-md="*" data-wrap="1"><i>I</i></button>
+  <button data-md="~~" data-wrap="1"><s>S</s></button>
+  <button data-md="`" data-wrap="1">&lt;/&gt;</button>
+  <span class="tb-sep"></span>
+  <button data-md="- ">• 列表</button>
+  <button data-md="1. ">1. 列表</button>
+  <button data-md="- [ ] ">□ 待办</button>
+  <span class="tb-sep"></span>
+  <button data-md="> ">❝ 引用</button>
+  <button data-md="\n```\n" data-wrap="1">▚ 代码块</button>
+  <button data-md="| 表 | 头 |\n| --- | --- |\n| 值 | 值 |">▦ 表格</button>
+  <button data-md="[标题](https://)">🔗 链接</button>
+  <button data-md="![图片](https://)">🖼 图片</button>
+  <span class="tb-right" id="saveState">已自动保存</span>
+</div>
+
+<main class="split">
+  <section class="pane edit-pane">
+    <div class="pane-tag">手稿</div>
+    <textarea id="editor" spellcheck="false"></textarea>
+  </section>
+  <section class="pane view-pane">
+    <div class="pane-tag red">排印</div>
+    <article class="preview" id="preview"></article>
+  </section>
+</main>
+
+<footer class="rail">
+  <span id="stStats">—</span>
+  <span class="st-dots"></span>
+  <span id="stRead">—</span>
+</footer>
+
+<div id="errSink" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>
